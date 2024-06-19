@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+			<!-- ============================ Page Title Start================================== -->
+
+			<div class="page-title" style="background:#f4f4f4 url(https://via.placeholder.com/1920x980);" data-overlay="5">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+
+							<div class="breadcrumbs-wrap">
+
+								<h2 class="breadcrumb-title">Add and View your Property</h2>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+<br>
+			<!-- ============================ Submit Property Start ================================== -->
+
+
+<!--<section class="gray pt-5 pb-5">-->
+
+<section class="gray main-wrapper-element" style="padding-top: 40px;">
+  <div class="container">
+<!--    <div class="dashboard-title-main">-->
+<!--      <h3>My Dashboard</h3>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-lg-12 col-md-12 col-sm-12">-->
+<!--        <div class="dashboard-body">-->
+<!--          <div class="row mobile-add-property">-->
+<!--            <div class="col-lg-12 col-md-12">-->
+<!--              <div class="_prt_filt_dash" style="display: block; padding: 0.8rem 0.9rem;">-->
+<!--                <div class="_prt_filt_dash_last">-->
+<!--                  <div class="_prt_filt_add_new">-->
+<!--                    <a href="">-->
+<!--                      <button class="btn btn-theme theme-orange follow-property-btn-mobile"  style="width: 100%;" type="button"><em class="fas fa-plus-circle"></em><span> Follow a New Property</span></button>-->
+<!--                    </a>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div class="dashboard_property">
+                <div class="table-responsive">
+                  <table class="table" id="property-list-table">
+                    <thead class="thead-dark">
+
+                    <tr>
+                      {% comment %} <th class="table-title text-center" scope="col">Property title</th> {% endcomment %}
+                      <th scope="col" class=""><a href="{% url 'addoffer' %}">
+                            <button class="btn btn-theme theme-orange follow-property-btn-desktop"  type="button"><em class="fas fa-plus-circle"></em><span> Follow a New Property</span></button>
+                          </a>
+                      </th>
+                      <th scope="col" class="m2_hide text-center highest-offer-btn-desktop" >Highest Offer</th>
+                      <th scope="col" class="m2_hide text-center">Total Offers</th>
+                      <th scope="col" class="m2_hide text-center">Followers</th>
+                      <th scope="col" class="">Last Updated</th>
+                      {% comment %} <th scope="col">Status</th> {% endcomment %}
+                      <th scope="col" class="text-center"></th>
+                    </tr>
+
+                    </thead>
+					<tbody>
+						{% comment %} <tr data-propertyid="142" class="open odd"><td data-title="property_title" class="table-title"> {% endcomment %}
+							{% for obj in offer_obj %}
+							<tr>
+
+					  <td data-title="Property" class="mob_element_hide sorting_1">
+			  <div class="dash_prt_wrap">
+				  <div class="dash_prt_caption">
+					  <h5><a href="/property/detail/142/">{{ obj.streetaddress1  }}</a></h5>
+					  <div class="prt_dashb_lot">{{ obj.address  }}</div>
+					  <div class="prt_dashb_lot">MLS : {{ obj.mlsnumber  }}</div>
+					  <div class="prt_dash_rate"><span>${{ obj.listingprice  }} </span></div>
+				  </div>
+			  </div>
+
+			</td><td data-title="Highest Offer" class="m2_hide text-center">
+						  <div class="_leads_action">
+								<h5>N/A</h5>
+						  </div>
+					   </td><td data-title="Total Offers" class="m2_hide text-center">
+			  <div class="_leads_view">
+				  <h5 class="up">0</h5>
+			  </div>
+			</td><td data-title="Followers" class="m2_hide text-center">
+						<div class="_leads_view"><h5>2</h5></div>
+					  </td><td data-title="Last Updated">
+			  <div class="_leads_posted">
+				  <h5>10 Aug - 5:57 AM</h5>
+			  </div>
+			  <div class="_leads_view_title"><span>18 days ago</span></div>
+			</td><td>
+			  <div class="_leads_action">
+				  <button class="btn btn-theme add-your-offer" data-id="142" type="button"><em class="fas fa-plus-circle"></em><span> Your Offer</span></button>
+				  <button class="btn btn-theme property-more-details" data-property-link="/property/detail/142/" data-id="142" type="button"><em class="fas fa-info-circle"></em><span> More Details</span></button>
+			  </div>
+
+			</td>
+
+
+		</tr>
+		{% endfor %}
+		</tbody>
+                  </table>
+                </div>
+              </div>
+
+						</div>
+          </div> <!-- row -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+				{% endblock content %}

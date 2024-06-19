@@ -1,0 +1,493 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="Themezhub" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>RentUP - Residence & Real Estate Template</title>
+
+        <!-- Custom CSS -->
+        <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/css/home_page.css' %}" rel="stylesheet">
+
+    </head>
+
+    <body class="yellow-skin">
+
+		 <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+       <div class="preloader"></div>
+
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+           <div class="header header-transparent change-logo">
+				<div class="container">
+					<nav id="navigation" class="navigation navigation-landscape">
+						<div class="nav-header">
+									<a class="nav-brand fixed-logo" href="/"
+                				 style="font-size: 31px; color: #144273;">
+               					 <img src="/static/assets/img/user-1.svg" class="logo" alt="" /><span>Cleerli</span></a>
+
+							<div class="nav-toggle"></div>
+							<div class="mobile_nav">
+								<ul>
+									<li class="_my_prt_list"><a href="#"><span>2</span>My List</a></li>
+									<li><a href="#" data-toggle="modal" data-target="#login"><i class="fas fa-user-circle fa-lg"></i></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="nav-menus-wrapper" style="transition-property: none;">
+							<ul class="nav-menu">
+
+								<li class="active"><a href="{% url 'home' %}">Home<span class="submenu-indicator"></span></a>
+
+								</li>
+
+								{% if request.session.login_user %}
+								<li class="active"><a href="{% url 'viewoffer' %}">My Dashboard<span class="submenu-indicator"></span></a>
+								</li>
+								{% endif %}
+								<li class="active"><a href="{% url 'pagecontent1' %}">What is Blind Bidding<span class="submenu-indicator"></span></a>
+
+								</li>
+
+								<li class="active"><a href="{% url 'aboutus' %}">About Us<span class="submenu-indicator"></span></a>
+
+								</li>
+								<li class="active"><a href="{% url 'faq' %}">FAQs<span class="submenu-indicator"></span></a>
+
+								</li>
+
+
+							</ul>
+
+
+							<ul class="nav-menu nav-menu-social align-to-right">
+								{% if request.session.login_user %}
+
+								<div class="btn-group account-drop p-0">
+									<button type="button" class="btn btn-order-by-filt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<img src="{{ user.image.url }}" class="avater-img" alt="">
+									</button>
+									<div class="dropdown-menu pull-right animated flipInX">
+										<div class="drp_menu_headr">
+											<h4>Hi, {{ user.username }}</h4>
+										</div>
+										<ul>
+
+											<li><a href="{% url 'myprofile' %}"><i class="fa fa-user-tie"></i>My Profile</a></li>
+											<li><a href="{% url 'viewoffer' %}"><i class="fa fa-bookmark"></i>Saved Property<span class="notti_coun style-2">7</span></a></li>
+<!--											<li><a href="my-property.html"><i class="fa fa-tasks"></i>My Properties<span class="notti_coun style-3">3</span></a></li>-->
+<!--											<li><a href="choose-package.html"><i class="fa fa-gift"></i>Choose Package</a></li>-->
+											<li><a href="{% url 'addoffer' %}"><i class="fa fa-pen-nib"></i>Submit New Property</a></li>
+<!--											<li><a href="change-password.html"><i class="fa fa-unlock-alt"></i>Change Password</a></li>-->
+										</ul>
+									</div>
+								</div>
+
+
+								<li class="add-listing">
+									  <a class="theme-cl" href="{% url 'logout' %}"><i class="fas fa-plus-circle mr-1"></i>Log Out </a>
+								</li>
+
+								{% else %}
+								<li>
+									<a href="#" class="alio_green" data-toggle="modal" data-target="#login">
+										<i class="fas fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
+									</a>
+								</li>
+								{% endif %}
+<!--								<li class="add-listing">-->
+<!--									<a href="{% url 'addoffer' %}"  class="theme-cl">-->
+<!--										 <i class="fas fa-plus-circle mr-1"></i>Add Property-->
+<!--									</a>-->
+<!--								</li>-->
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- End Navigation -->
+			<div class="clearfix"></div>
+
+			<!-- ============================================================== -->
+			<!-- Top header  -->
+			<!-- ============================================================== -->
+{% block content %}
+
+{% endblock content %}
+
+
+			<div class="clearfix"></div>
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="dark-footer skin-dark-footer style-2">
+				<div class="footer-middle">
+					<div class="container">
+						<div class="row">
+
+							<div class="col-lg-5 col-md-5">
+								<div class="footer_widget">
+									<img src="{% static 'assets/img/logo-light.png' %}" class="img-footer small mb-2" alt="" />
+									<h4 class="extream mb-3">Do you need help with<br>anything?</h4>
+									<p>Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month</p>
+									<div class="foot-news-last">
+										<div class="input-group">
+										  <input type="text" class="form-control" placeholder="Email Address">
+											<div class="input-group-append">
+												<button type="button" class="input-group-text theme-bg b-0 text-light">Subscribe</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-6 col-md-7 ml-auto">
+								<div class="row">
+
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">Layouts</h4>
+											<ul class="footer-menu">
+												<li><a href="#">Home Page</a></li>
+												<li><a href="#">About Page</a></li>
+												<li><a href="#">Service Page</a></li>
+												<li><a href="#">Property Page</a></li>
+												<li><a href="#">Contact Page</a></li>
+												<li><a href="#">Single Blog</a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">All Sections</h4>
+											<ul class="footer-menu">
+												<li><a href="#">Headers<span class="new">New</span></a></li>
+												<li><a href="#">Features</a></li>
+												<li><a href="#">Attractive<span class="new">New</span></a></li>
+												<li><a href="#">Testimonials</a></li>
+												<li><a href="#">Videos</a></li>
+												<li><a href="#">Footers</a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">Company</h4>
+											<ul class="footer-menu">
+												<li><a href="#">About</a></li>
+												<li><a href="#">Blog</a></li>
+												<li><a href="#">Pricing</a></li>
+												<li><a href="#">Affiliate</a></li>
+												<li><a href="#">Login</a></li>
+												<li><a href="#">Changelog<span class="update">Update</span></a></li>
+											</ul>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-bottom">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-lg-12 col-md-12 text-center">
+								<p class="mb-0">© 2021 RentUP. Designd By <a href="https://themezhub.com">ThemezHub</a>.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- ============================ Footer End ================================== -->
+
+			<!-- Log In Modal -->
+			<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+				<div class="modal-dialog modal-xl login-pop-form" role="document">
+					<div class="modal-content overli" id="registermodal">
+						<div class="modal-body p-0">
+							<div class="resp_log_wrap">
+								<div class="resp_log_thumb" style=" background:url({% static 'assets/img/log.jpg' %})no-repeat;"></div>
+								<div class="resp_log_caption">
+									<span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+									<div class="edlio_152">
+										<ul class="nav nav-pills tabs_system center" id="pills-tab" role="tablist">
+										  <li class="nav-item">
+											<a class="nav-link active" id="pills-login-tab" data-toggle="pill" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
+										  </li>
+										  <li class="nav-item">
+											<a class="nav-link" id="pills-signup-tab" data-toggle="pill" href="#pills-signup" role="tab" aria-controls="pills-signup" aria-selected="false"><i class="fas fa-user-plus mr-2"></i>Register</a>
+										  </li>
+										</ul>
+									</div>
+									<div class="tab-content" id="pills-tabContent">
+										<div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+											<div class="login-form">
+
+												<p id="msg2" style="color:red;"></p>
+												<form method="POST" id="frmlogin" action="{% url 'login' %}">
+													{% csrf_token %}
+													<div class="form-group">
+														<label>User Name</label>
+														<div class="input-with-icon">
+															<input type="email" id="loginemail" name="email" class="form-control" required>
+															<i class="ti-user"></i>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label>Password</label>
+														<div class="input-with-icon">
+															<input type="password" id="loginpassword" name="password" class="form-control" required>
+															<i class="ti-unlock"></i>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="eltio_ol9">
+<!--															<div class="eltio_k1">-->
+<!--																<input id="dd" class="checkbox-custom" name="dd" type="checkbox">-->
+<!--																<label for="dd" class="checkbox-custom-label">Remember Me</label>-->
+<!--															</div>-->
+															<div class="eltio_k2">
+																<a href="">Forgate Password?</a>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<button type="submit"  class="btn btn-md full-width pop-login">Login</button>
+													</div>
+
+												</form>
+
+											</div>
+										</div>
+
+										<div class="tab-pane fade" id="pills-signup" role="tabpanel" aria-labelledby="pills-signup-tab">
+											<div class="login-form">
+
+													<p id="msg" style="color:red;"></p>
+
+												<form method="POST" id="postform" action="{% url 'signup' %}">
+													{% csrf_token %}
+
+													<div class="form-group">
+														<label>Full Name</label>
+														<div class="input-with-icon">
+															<input type="text" name="username" id="username" class="form-control" required>
+															<i class="ti-user"></i>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label>Email ID</label>
+														<div class="input-with-icon">
+															<input type="email" name="email" id="email" pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$"class="form-control" required>
+															<i class="ti-user"></i>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<label>Password</label>
+														<div class="input-with-icon">
+															<input type="password" name="password" id="password" class="form-control" required>
+															<i class="ti-unlock"></i>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<div class="eltio_ol9">
+
+															<div class="eltio_k1">
+																<input id="dd" class="checkbox-custom" name="terms_confirmed" type="checkbox" required>
+																<label for="dd" class="checkbox-custom-label">By using the website, you accept the terms and conditions</label>
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group">
+														<button type="submit"   class="btn btn-md full-width pop-login">Register</button>
+													</div>
+
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- End Modal -->
+
+			<!-- Send Message -->
+			<div class="modal fade" id="autho-message" tabindex="-1" role="dialog" aria-labelledby="authomessage" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+					<div class="modal-content" id="authomessage">
+						<span class="mod-close" data-dismiss="modal" aria-hidden="true"><i class="ti-close"></i></span>
+						<div class="modal-body">
+							<h4 class="modal-header-title">Drop Message</h4>
+							<div class="login-form">
+								<form >
+
+									<div class="form-group">
+										<label>Subject</label>
+										<div class="input-with-icons">
+											<input type="text" class="form-control" placeholder="Message Title">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label>Messages</label>
+										<div class="input-with-icons">
+											<textarea class="form-control ht-80"></textarea>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<button type="submit" class="btn btn-md full-width pop-login">Send Message</button>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Modal -->
+
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+		 <script src="/static/assets/js/jquery.min.js"></script>
+
+
+<script>
+		$(document).on('submit','#postform',function(e){
+		e.preventDefault();
+		var username= $('#username').val()
+		var email = $('#email').val()
+		var password = $('#password').val()
+		document.getElementById("msg").style.color = "orange";
+		document.getElementById("msg").textContent="Please wait";
+		$.ajax({
+			type: 'POST',
+			url : "{% url 'signup' %}",
+			data:{
+				'username' : username,
+				'email':email,
+				'password':password,
+				csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+			},
+			success:function(response){
+				console.log(response)
+				if(response.status=="User Login Success"){
+				//window.location.href = "{% url 'home' %}";
+					document.getElementById("msg").style.color = "green";
+					document.getElementById("msg").textContent="Registration Successful";
+					document.getElementById("username").value = "";
+					document.getElementById("email").value = "";
+					document.getElementById("password").value = "";
+				}
+				if(response.status=="Email is Already Registered"){
+				document.getElementById("msg").style.color = "red";
+				document.getElementById("msg").textContent="Email is Already Registered";
+				}
+				if(response.status=="Incorrect Password"){
+					document.getElementById("msg").style.color = "red";
+					document.getElementById("msg").textContent="Password must have 6 or capital,small,number,speical char";
+				}
+				if(response.status=="Registration Fail"){
+					document.getElementById("msg").style.color = "red";
+					document.getElementById("msg").textContent="Registration Fail";
+				}
+
+			}
+			})
+			})
+    </script>
+
+<script>
+		$(document).on('submit','#frmlogin',function(e){
+		e.preventDefault();
+		var email = $('#loginemail').val()
+		var password = $('#loginpassword').val()
+		$.ajax({
+			type: 'POST',
+			url : "{% url 'login' %}",
+			data:{
+				'email':email,
+				'password':password,
+				csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+			},
+			success:function(response){
+				if(response.status=="User Login Success"){
+				window.location.href = "{% url 'home' %}";
+				//	document.getElementById("msg").style.color = "green";
+				//	document.getElementById("msg").textContent="Registration Successful";
+				//	document.getElementById("fullname").value = "";
+				//	document.getElementById("email").value = "";
+				//	document.getElementById("password").value = "";
+				}
+				if(response.status=="Invaild Email"){
+				document.getElementById("msg2").style.color = "red";
+				document.getElementById("msg2").textContent="Invaild Email Do Register";
+				}
+				if(response.status=="Incorrect Password"){
+					document.getElementById("msg2").style.color = "red";
+					document.getElementById("msg2").textContent="Enter Password Incorrect";
+				}
+				if(response.status=="Invaild Password"){
+					document.getElementById("msg2").style.color = "red";
+					document.getElementById("msg2").textContent="Invaild Login User";
+				}
+
+			}
+			})
+			})
+    </script>
+
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+		<script src="{% static 'assets/js/popper.min.js' %}"></script>
+		<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/ion.rangeSlider.min.js' %}"></script>
+		<script src="{% static 'assets/js/select2.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'assets/js/slick.js' %}"></script>
+		<script src="{% static 'assets/js/slider-bg.js' %}"></script>
+		<script src="{% static 'assets/js/lightbox.js' %}"></script>
+		<script src="{% static 'assets/js/imagesloaded.js' %}"></script>
+		<script src="{% static 'assets/js/daterangepicker.js' %}"></script>
+		<script src="{% static 'assets/js/custom.js' %}"></script>
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+
+	</body>
+</html>

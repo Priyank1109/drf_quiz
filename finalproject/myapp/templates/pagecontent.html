@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title" style="background:#f4f4f4 url(https://via.placeholder.com/1920x980);" data-overlay="5">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+
+							<div class="breadcrumbs-wrap">
+
+								<h2 class="breadcrumb-title">Add your Property</h2>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+<br>
+			<!-- ============================ Submit Property Start ================================== -->
+<section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+
+        <div class="alert alert-info" role="alert">
+          <p>If you don't have an account you can create one by <a href="#">Click Here</a></p>
+        </div>
+
+      </div>
+
+      <!-- Submit Form -->
+		<form method="POST" enctype="multipart/form-data" action="{% url 'pagecontent' %}">
+			{% csrf_token %}
+      <div class="col-lg-12 col-md-12">
+
+        <div class="submit-page p-0">
+
+          <!-- Basic Information -->
+
+
+
+          <!-- Location -->
+          <div class="frm_submit_block">
+            <h3> Add Data For Content</h3>
+            <div class="frm_submit_wrap">
+              <div class="form-row">
+
+                <div class="form-group col-md-12">
+                  <label>Title</label>
+                  <input
+                    id="findAddress"
+                    name="title"
+                    required
+                    type="text"
+                    class="form-control"
+                    autocomplete="off">
+                </div>
+
+                <div class="form-group col-md-12">
+                  <label> Address </label>
+                  <input type="text" id="streetAddress1" class="form-control" name="address">
+                  <div class="invalid-feedback" id="streetAddress1Error"></div>
+                </div>
+
+                <div class="form-group col-md-12">
+                  <label>Content</label>
+                  <input type="text"  id="streetAddress2" class="form-control" name="content">
+				  {% comment %} <input type="file" name="myfile"> {% endcomment %}
+                  <div class="invalid-feedback" id="streetAddress2Error"></div>
+                </div>
+
+				<div class="form-group col-md-12">
+					<label>Image</label>
+					{% comment %} <input type="text"  id="streetAddress2" class="form-control" name="content"> {% endcomment %}
+					<input type="file" name="myfile">
+					<div class="invalid-feedback" id="streetAddress2Error"></div>
+				  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12 col-md-12">
+              <button id="addProperty" class="btn btn-theme" type="submit">
+<!--              <div class="spinner-border spinner-border-custom" role="status"></div>-->
+              <span>Submit</span>
+            </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+	</form>
+    </div>
+  </div>
+
+</section>
+			<br>
+<!-- ============================ Submit Property End ================================== -->
+
+
+
+			{% endblock content %}

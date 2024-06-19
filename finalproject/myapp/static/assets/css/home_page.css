@@ -1,0 +1,21 @@
+
+.banner-svg {
+    width: 500px;
+    height: 524px;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
+.user-svg {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.user-svg img {
+    width: 100%;
+}
+
+.banner-mobile-txt {
+    display: none !important;
+}

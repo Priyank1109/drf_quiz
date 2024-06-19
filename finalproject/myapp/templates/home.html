@@ -1,0 +1,377 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+			
+			<!-- ============================ Hero Banner  Start================================== -->
+			<div class="image-cover hero_banner" style="background:#daefe1;">
+				<div class="container">
+          <div class="hero-banner-wrapper">
+
+              <div class="col-md-12 col-sm-12 col-xl-12 hero-left-text ">
+              	<div class="banner-desktop-txt">
+					<h1>Goodbye blind bidding. </h1>
+					<h1>Hello transparency.</h1>
+	                <h4 style="color: #7A8CA3; margin-top: 15px;">Buy without feeling gamed.</h4>
+	              </div>
+				  <div class="banner-svg">
+                <div class="user-svg">
+                  <img src="{% static 'user.svg' %}">
+                </div>
+				  </div>
+                <div class="row col-mb-2">
+                  <div class="col-lg-4 col-md-6 col-sm-12" style="margin-top: 25px;">
+                    <span class="btn btn-theme mt-2">Step 1: Follow A Property</span><br>
+                    <p class="mt-2 custom-text" style="max-width: 240px;">Got your eye on a home? Track interest and get notified when people follow the same property.</p>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-12 hero-btn" style="margin-top: 25px;">
+                    <span tabindex="0" class="btn btn-theme mt-2">Step 2: Add Your Offer</span><br>
+                    <p class="mt-2 custom-text" style="max-width: 217px;">Check out competing offer details. Make your next move with the most information ever.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+				</div>
+			</div>
+			<!-- ============================ Hero Banner End ================================== -->
+
+			<!-- ============================ Our Awards Start ================================== -->
+			<section class="p-0">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-xl-11 col-lg-11 col-md-12">
+						
+							<div class="_awards_group">	
+								<ul class="_awards_lists">
+									<!-- single list -->
+									<li>
+										<div class="_awards_list_wrap">
+											<div class="_awards_list_thumb"><img src="{% static 'assets/img/award-1.png' %}" class="img-fluid" alt="" /></div>
+											<div class="_awards_list_caption">
+												<h5 class="theme-cl">2021</h5>
+												<span>Annual Awards</span>
+											</div>
+										</div>
+									</li>
+									<!-- single list -->
+									<li>
+										<div class="_awards_list_wrap">
+											<div class="_awards_list_thumb"><img src="{% static 'assets/img/award-5.png' %}" class="img-fluid" alt="" /></div>
+											<div class="_awards_list_caption">
+												<h5 class="theme-cl-2">2018</h5>
+												<span>Filka Vivo Award</span>
+											</div>
+										</div>
+									</li>
+									<!-- single list -->
+									<li>
+										<div class="_awards_list_wrap">
+											<div class="_awards_list_thumb"><img src="{% static 'assets/img/award-2.png' %}" class="img-fluid" alt="" /></div>
+											<div class="_awards_list_caption">
+												<h5 class="text-warning">2017</h5>
+												<span>IITCA Green Award</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Our Awards End ================================== -->
+			
+
+			
+								</div>
+					
+				</div>
+
+			</section>
+			<!-- ============================ Properties End ================================== -->
+			
+
+
+			<!-- ============================ Smart Testimonials ================================== -->
+			<section class="gray-simple">
+				<div class="container">
+					{% for obj in data %}
+					<div class="row justify-content-center">
+						<div class="col-lg-7 col-md-8">
+							<div class="sec-heading center">
+								<h2>{{ obj.title }}</h2>
+								<h2>Good Reviews By Clients</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							<div class="item-slide space">
+								
+								<!-- Single Item -->
+								<div class="single_items">
+									<div class="_testimonial_wrios">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="https://via.placeholder.com/500x500" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Susan D. Murphy</h5>
+													<div class="_ovr_posts"><span>CEO, Leader</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.7</div>
+												</div>
+											</div>
+											<div class="_testimonial_flex_first_last">
+												<div class="_tsl_flex_thumb">
+													<img src="{{ obj.image.url }}" class="img-fluid" alt="">
+												</div>
+											</div>
+										</div>
+										
+										<div class="facts-detail">
+											<p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Single Item -->
+								<div class="single_items">
+									<div class="_testimonial_wrios">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="https://via.placeholder.com/500x500" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Maxine E. Gagliardi</h5>
+													<div class="_ovr_posts"><span>Apple CEO</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.5</div>
+												</div>
+											</div>
+											<div class="_testimonial_flex_first_last">
+												<div class="_tsl_flex_thumb">
+													<img src="{{ obj.image.url }}" class="img-fluid" alt="">
+												</div>
+											</div>
+										</div>
+										
+										<div class="facts-detail">
+											<p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Single Item -->
+								<div class="single_items">
+									<div class="_testimonial_wrios">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="https://via.placeholder.com/500x500" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Roy M. Cardona</h5>
+													<div class="_ovr_posts"><span>Google Founder</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.9</div>
+												</div>
+											</div>
+											<div class="_testimonial_flex_first_last">
+												<div class="_tsl_flex_thumb">
+													<img src="{{ obj.image.url }}" class="img-fluid" alt="">
+												</div>
+											</div>
+										</div>
+										
+										<div class="facts-detail">
+											<p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Single Item -->
+								<div class="single_items">
+									<div class="_testimonial_wrios">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="https://via.placeholder.com/500x500" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Dorothy K. Shipton</h5>
+													<div class="_ovr_posts"><span>Linkedin Leader</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.7</div>
+												</div>
+											</div>
+											<div class="_testimonial_flex_first_last">
+												<div class="_tsl_flex_thumb">
+													<img src="{{ obj.image.url }}" class="img-fluid" alt="">
+												</div>
+											</div>
+										</div>
+										
+										<div class="facts-detail">
+											<p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
+										</div>
+									</div>
+								</div>
+								
+								<!-- Single Item -->
+								<div class="single_items">
+									<div class="_testimonial_wrios">
+										<div class="_testimonial_flex">
+											<div class="_testimonial_flex_first">
+												<div class="_tsl_flex_thumb">
+													<img src="https://via.placeholder.com/500x500" class="img-fluid" alt="">
+												</div>
+												<div class="_tsl_flex_capst">
+													<h5>Robert P. McKissack</h5>
+													<div class="_ovr_posts"><span>CEO, Leader</span></div>
+													<div class="_ovr_rates"><span><i class="fa fa-star"></i></span>4.7</div>
+												</div>
+											</div>
+											<div class="_testimonial_flex_first_last">
+												<div class="_tsl_flex_thumb">
+													<img src="{{ obj.image.url }}" class="img-fluid" alt="">
+												</div>
+											</div>
+										</div>
+										
+										<div class="facts-detail">
+											<p>Faucibus tristique felis potenti ultrices ornare rhoncus semper hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in dui.</p>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			<!-- ============================ Smart Testimonials End ================================== -->
+			
+			<!-- ============================ article Start ================================== -->
+<!--			<section class="min">-->
+<!--				<div class="container">-->
+<!--				-->
+<!--					<div class="row justify-content-center">-->
+<!--						<div class="col-lg-7 col-md-8">-->
+<!--							<div class="sec-heading center">-->
+<!--								<h2>Latest News & Articles</h2>-->
+<!--								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					-->
+<!--					<div class="row justify-content-center">-->
+<!--						-->
+<!--						&lt;!&ndash; Single blog Grid &ndash;&gt;-->
+<!--						<div class="col-lg-4 col-md-6">-->
+<!--							<div class="grid_blog_box">-->
+<!--								-->
+<!--								<div class="gtid_blog_thumb">-->
+<!--									<a href="blog-detail.html"><img src="https://via.placeholder.com/1200x740" class="img-fluid" alt="" /></a>-->
+<!--									<div class="gtid_blog_info"><span>12</span>Sep 2021</div>-->
+<!--								</div>								-->
+<!--								-->
+<!--								<div class="blog-body">-->
+<!--									<h4 class="bl-title"><a href="blog-detail.html">Creative Designs</a><span class="latest_new_post">New</span></h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>-->
+<!--								</div>-->
+<!--								-->
+<!--								<div class="modern_property_footer">-->
+<!--									<div class="property-author">-->
+<!--										<div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="https://via.placeholder.com/500x500" class="img-fluid" alt=""></a></div>-->
+<!--										<h5><a href="agent-page.html" tabindex="-1">Shaurya Preet</a></h5>-->
+<!--									</div>-->
+<!--									<span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>202</span>-->
+<!--								</div>-->
+<!--								-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						-->
+<!--						&lt;!&ndash; Single blog Grid &ndash;&gt;-->
+<!--						<div class="col-lg-4 col-md-6">-->
+<!--							<div class="grid_blog_box">-->
+<!--								-->
+<!--								<div class="gtid_blog_thumb">-->
+<!--									<a href="blog-detail.html"><img src="https://via.placeholder.com/1200x740" class="img-fluid" alt="" /></a>-->
+<!--									<div class="gtid_blog_info"><span>15</span>Aug 2021</div>-->
+<!--								</div>								-->
+<!--								-->
+<!--								<div class="blog-body">-->
+<!--									<h4 class="bl-title"><a href="blog-detail.html">UX/UI Developer</a><span class="latest_new_post hot">Hot</span></h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>-->
+<!--								</div>-->
+<!--								-->
+<!--								<div class="modern_property_footer">-->
+<!--									<div class="property-author">-->
+<!--										<div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="https://via.placeholder.com/500x500" class="img-fluid" alt=""></a></div>-->
+<!--										<h5><a href="agent-page.html" tabindex="-1">Nirgam Singh</a></h5>-->
+<!--									</div>-->
+<!--									<span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>407</span>-->
+<!--								</div>-->
+<!--								-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						-->
+<!--						&lt;!&ndash; Single blog Grid &ndash;&gt;-->
+<!--						<div class="col-lg-4 col-md-6">-->
+<!--							<div class="grid_blog_box">-->
+<!--								-->
+<!--								<div class="gtid_blog_thumb">-->
+<!--									<a href="blog-detail.html"><img src="https://via.placeholder.com/1200x740" class="img-fluid" alt="" /></a>-->
+<!--									<div class="gtid_blog_info"><span>27</span>Nov 2021</div>-->
+<!--								</div>								-->
+<!--								-->
+<!--								<div class="blog-body">-->
+<!--									<h4 class="bl-title"><a href="blog-detail.html">WordPress Developer & UI</a><span class="latest_new_post">New</span></h4>-->
+<!--									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod. </p>-->
+<!--								</div>-->
+<!--								-->
+<!--								<div class="modern_property_footer">-->
+<!--									<div class="property-author">-->
+<!--										<div class="path-img"><a href="agent-page.html" tabindex="-1"><img src="https://via.placeholder.com/500x500" class="img-fluid" alt=""></a></div>-->
+<!--										<h5><a href="agent-page.html" tabindex="-1">Dhananjay Singh</a></h5>-->
+<!--									</div>-->
+<!--									<span class="article-pulish-date"><i class="ti-comment-alt mr-2"></i>410</span>-->
+<!--								</div>-->
+<!--								-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						-->
+<!--					</div>-->
+<!--					-->
+<!--				</div>-->
+<!--			</section>-->
+			<div class="clearfix"></div>
+			<!-- ============================ article End ================================== -->
+			
+			<!-- ============================ Call To Action ================================== -->
+			<section class="theme-bg call_action_wrap-wrap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							
+							<div class="call_action_wrap">
+								<div class="call_action_wrap-head">
+									<h3>Do You Have Questions ?</h3>
+									<span>We'll help you to grow your career and growth.</span>
+								</div>
+								<a href="#" class="btn btn-call_action_wrap">Contact Us Today</a>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Call To Action End ================================== -->
+
+
+			{% endblock content %}
